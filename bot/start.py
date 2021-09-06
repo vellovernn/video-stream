@@ -32,11 +32,11 @@ async def _human_time_duration(seconds):
 @Client.on_message(command(["start", f"start@{BOT_USERNAME}"]))
 async def start(_, m: Message):
    if m.chat.type == "private":
-      await m.reply(f"✨ **Hello tol, gua telegram video streaming bot.**\n\n💭 **gua dibuat untuk melakukan streaming video dalam obrolan video grup dengan mudah.**\n\n❔ **To find out how to use me, please press the help button below** 👇🏻",
+      await m.reply(f"✨ **Hello tol, gua telegram video streaming bot.**\n\n💭 **gua dibuat untuk melakukan streaming video dalam obrolan video grup dengan mudah.**\n\n❔ **Kalo gak bisa gunain gua, teken tombolnya di bawah tolol! ** 👇🏻",
                     reply_markup=InlineKeyboardMarkup(
                        [[
                           InlineKeyboardButton(
-                             "❔ HOW TO USE THIS BOT", callback_data="cbguide")
+                             "❔ CARA MENGGUNAKAN BOT", callback_data="cbguide")
                        ],[
                           InlineKeyboardButton(
                              "🌐 Terms & Condition", callback_data="cbinfo")
@@ -47,10 +47,10 @@ async def start(_, m: Message):
                              "📣 Channel", url="https://t.me/AsupanVern")
                        ],[
                           InlineKeyboardButton(
-                             "👩🏻‍💻 Developer", url="https://t.me/Veernn")
+                             "👩🏻‍💻 OWNER", url="https://t.me/Veernn")
                        ],[
                           InlineKeyboardButton(
-                             "📚 All Command List", callback_data="cblist")
+                             "📚 SEMUA Command List", callback_data="cblist")
                        ]]
                     ))
    else:
@@ -58,10 +58,10 @@ async def start(_, m: Message):
                           reply_markup=InlineKeyboardMarkup(
                        [[
                           InlineKeyboardButton(
-                             "❔ HOW TO USE THIS BOT", callback_data="cbguide")
+                             "❔ CARA MENGGUNAKAN BOT", callback_data="cbguide")
                        ],[
                           InlineKeyboardButton(
-                             "🌐 Search Youtube", switch_inline_query='')
+                             "🌐 Mencari Youtube", switch_inline_query='')
                        ],[
                           InlineKeyboardButton(
                              "📚 Command List", callback_data="cblist")
@@ -76,7 +76,7 @@ async def alive(_, m: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await m.reply_text(
-        f"""✅ **bot is running**\n<b>💠 **uptime:**</b> `{uptime}`""",
+        f"""✅ **bot sedang di jalankan**\n<b>💠 **uptime:**</b> `{uptime}`""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
