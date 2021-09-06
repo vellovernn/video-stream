@@ -6,7 +6,7 @@ from config import ASSISTANT_NAME as bn
 @Client.on_callback_query(filters.regex("cbguide"))
 async def cbguide(_, query: CallbackQuery):
   await query.edit_message_text(
-    f"""❓ HOW TO USE THIS BOT:
+    f"""❓ CARA MENGGUNAKAN BOT:
 
 1.) first, add me to your group.
 2.) then promote me as admin and give all permissions except anonymous admin.
@@ -15,7 +15,7 @@ async def cbguide(_, query: CallbackQuery):
 5.) type /vstream (reply to video) to start streaming.
 6.) type /vstop to end the video streaming.
 
-📝 **note: stream & stop command can only be executed by group admin only!**
+📝 **Note: Stream & stop command cuman buat admin ya tolol!**
 
 ⚡ __Maintained by Veez Project Team__""",
     reply_markup=InlineKeyboardMarkup(
@@ -28,11 +28,11 @@ async def cbguide(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("cbstart"))
 async def cbstart(_, query: CallbackQuery):
-  await query.edit_message_text(f"✨ **Hello there, I am a telegram video streaming bot.**\n\n💭 **I was created to stream videos in group video chats easily.**\n\n❔ **To find out how to use me, please press the help button below** 👇🏻",
+  await query.edit_message_text(f"✨ **Hello tol, Gua telegram streaming bot.**\n\n💭 **gua  dibuat untuk melakukan streaming video dalam obrolan video grup dengan mudah.**\n\n❔ **Kalo mau gunain gua, lo pencet tombol di bawah ya tol** 👇🏻",
                                 reply_markup=InlineKeyboardMarkup(
                        [[
                           InlineKeyboardButton(
-                             "❔ HOW TO USE THIS BOT", callback_data="cbguide")
+                             "❔ CARA MENGGUNAKAN BOT", callback_data="cbguide")
                        ],[
                           InlineKeyboardButton(
                              "🌐 Terms & Condition", callback_data="cbinfo")
@@ -43,10 +43,10 @@ async def cbstart(_, query: CallbackQuery):
                              "📣 Channel", url="https://t.me/AsupanVern")
                        ],[
                           InlineKeyboardButton(
-                             "👩🏻‍💻 Developer", url="https://t.me/Veernn")
+                             "👩🏻‍💻 Owner", url="https://t.me/Veernn")
                        ],[
                           InlineKeyboardButton(
-                             "📚 All Command List", callback_data="cblist")
+                             "📚 Semua Command List", callback_data="cblist")
                        ]]
                     ))
 
@@ -78,7 +78,7 @@ __This bot licensed under GNU-GPL 3.0 License__""",
 @Client.on_callback_query(filters.regex("cblist"))
 async def cblist(_, query: CallbackQuery):
   await query.edit_message_text(
-    f"""📚 All Command List:
+    f"""📚 Semua Command List:
 
 » /vstream (reply to video or file) - to stream video
 » /vstop - end the video streaming
@@ -102,7 +102,7 @@ async def cblist(_, query: CallbackQuery):
 » /uptime - check bot uptime status
 » /sysinfo - check bot system information
 
-⚡ __Maintained by Veez Project Team__""",
+⚡ __Maintained by Vern Project Team__""",
     reply_markup=InlineKeyboardMarkup(
       [[
         InlineKeyboardButton(
