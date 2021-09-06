@@ -252,7 +252,7 @@ async def vsong(_, message: Message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    k = await message.reply_text("🔎 **searching video...**")
+    k = await message.reply_text("🔎 **Mencari Video...**")
     ydl_opts = {
         "format": "best[ext=mp4]",
         "geo-bypass": True,
@@ -279,11 +279,11 @@ async def vsong(_, message: Message):
             open(thumb_name, 'wb').write(thumb.content)
         except Exception as e:
             print(e)
-            await k.edit('❌ **video not found, please give a valid video name.\n\n» if you think this is an error report to @VeezSupportGroup**')
+            await k.edit('❌ **Video Gak Ada, MASUKIN JUDUL YANG BENER TOLOL!!.\n\n» if you think this is an error report to @Veernn**')
             return
     except Exception as e:
         await k.edit(
-            "💡 **please give a video name too you want to download.**\n\n» for example: `/vsong runaway`"
+            "💡 ** Tolong berikan judul lagu yang ingin di download.**\n\n» for example: `/vsong runaway`"
         )
         print(str(e))
         return
@@ -299,7 +299,7 @@ async def vsong(_, message: Message):
         await message.reply_video(video_file, caption=caption, duration=duration, thumb=thumb_name, reply_markup=buttons, supports_streaming=True)
         await k.delete()
     except Exception as e:
-        await k.edit(f'❌ **something went wrong !** \n`{e}`')
+        await k.edit(f'❌ **Ada yang salah tol !** \n`{e}`')
         pass
     try:
         os.remove(video_file)
